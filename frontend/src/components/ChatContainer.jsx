@@ -20,7 +20,7 @@ const ChatContainer = () => {
 
   useEffect(()=>{
     if(messageEndRef.current && messages){
-      messageEndRef.current.scrollIntoView({behaviour: "smooth"});
+      messageEndRef.current.scrollIntoView({behavior: "smooth"});
     }
   },[messages])
   if (isMessageLoading) {
@@ -36,7 +36,7 @@ const ChatContainer = () => {
   return (
     <div className="flex-1 flex flex-col overflow-auto sm:mb-10">
       <ChatHeader />
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 hide-scrollbar">
         {messages.map((message) => (
           <div
             key={message._id}
@@ -73,7 +73,10 @@ const ChatContainer = () => {
           </div>
         ))}
       </div>
-      <MessageInput />
+
+      <div className="sticky bottom-0 bg-base-100">
+        <MessageInput />
+      </div>
     </div>
   );
 };
