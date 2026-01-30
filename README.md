@@ -112,6 +112,7 @@ Backend: http://localhost:5000
 
 🔮 Future Enhancements
 Typing indicators
+
 Message read receipts
 Group chats
 
